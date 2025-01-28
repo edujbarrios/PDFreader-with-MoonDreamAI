@@ -1,6 +1,6 @@
 # 📄 PDFreader with MoondreamAPI
 
-> An intelligent PDF cover page analyzer powered by MoondreamAPI and Streamlit
+**An intelligent PDF cover page analyzer powered by MoondreamAPI and Streamlit**
 
 ## 🌟 Features
 
@@ -25,7 +25,7 @@ streamlit run app.py
 
 ## 🧑‍💻 Prompts
 
-To enhance the PDF analysis, you can edit the **`prompt/prompt.md`** to edit and use a betterr prompt to analyze the covers.
+To enhance the PDF analysis, you can edit the **`prompts/prompt.md`** to edit and use a better prompt to analyze the covers.
 
 ## 🛠️ Technologies Used
 
