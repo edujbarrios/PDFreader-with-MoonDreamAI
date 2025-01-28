@@ -1,0 +1,12 @@
+[project]
+name = "PDFreader with MoonDream"
+version = "1.0.0"
+description = "A simple yet useful tool to analyze pdf covers with MoonDream AI and it's API"
+requires-python = ">=3.11"
+dependencies = [
+    "fitz>=0.0.1.dev2",
+    "openai>=1.60.0",
+    "pillow>=11.1.0",
+    "pymupdf>=1.25.2",
+    "streamlit>=1.41.1",
+]
