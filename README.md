@@ -2,7 +2,7 @@
 
 > An intelligent PDF cover page analyzer powered by MoondreamAPI and Streamlit
 
-![Application Preview](images/cover_preview.png)
+![Another preview](images/another_preview.png)
 
 ## 🌟 Features
 
