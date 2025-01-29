@@ -36,7 +36,7 @@ streamlit run app.py
 ## 📁 Project Structure
 
 ```
-├── .streamlit/          # Streamlit configuration files
+├── .streamlit/          # Streamlit configuration files (will be generated once you excecute the program)
 ├── images/              # Application screenshots and assets
 ├── prompts/            # AI analysis prompt templates
 ├── responses/          # JSON files storing analysis results
