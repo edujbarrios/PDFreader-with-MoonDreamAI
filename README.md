@@ -4,10 +4,6 @@
 
 ![Application Preview](images/cover_preview.png)
 
-![Another preview](images/another_preview.png)
-
-![PDF Analysis Interface](images/image_1738152245359.png)
-
 ## 🌟 Features
 
 - 📊 Extract cover pages from PDF documents
