@@ -1,10 +1,12 @@
 import base64
 import io
+import json
+import os
+from datetime import datetime
 from typing import Tuple, Optional
 import fitz  # PyMuPDF
 from PIL import Image
 from openai import OpenAI
-import os
 
 def read_prompt_template() -> str:
     """Read the prompt template from prompts/prompt.md"""
@@ -18,6 +20,33 @@ def read_prompt_template() -> str:
 def validate_api_key(api_key: str) -> bool:
     """Validate the Moondream API key format."""
     return len(api_key.strip()) > 0
+
+def save_response_to_json(pdf_name: str, analysis_result: str) -> None:
+    """Save the analysis response to a JSON file."""
+    responses_dir = "responses"
+    os.makedirs(responses_dir, exist_ok=True)
+
+    response_file = os.path.join(responses_dir, "responses.json")
+
+    # Create or load existing responses
+    if os.path.exists(response_file):
+        with open(response_file, 'r', encoding='utf-8') as f:
+            responses = json.load(f)
+    else:
+        responses = []
+
+    # Add new response
+    response_entry = {
+        "pdf_name": pdf_name,
+        "analysis_result": analysis_result,
+        "timestamp": datetime.now().isoformat()
+    }
+
+    responses.append(response_entry)
+
+    # Save updated responses
+    with open(response_file, 'w', encoding='utf-8') as f:
+        json.dump(responses, f, indent=2, ensure_ascii=False)
 
 def extract_first_page_as_image(pdf_bytes: bytes) -> Optional[bytes]:
     """Extract the first page of a PDF and convert it to an image."""

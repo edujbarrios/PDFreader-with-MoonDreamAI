@@ -1,0 +1,33 @@
+{
+  "total_tests": 4,
+  "passed": 4,
+  "failed": 0,
+  "errors": 0,
+  "timestamp": "2025-01-29T12:01:21.665548",
+  "test_cases": [
+    {
+      "test_name": "test_utils.TestPDFAnalyzer.test_api_key_validation",
+      "status": "pass",
+      "execution_time": "0:00:00.000342",
+      "timestamp": "2025-01-29T12:01:21.664005"
+    },
+    {
+      "test_name": "test_utils.TestPDFAnalyzer.test_extract_first_page_invalid_pdf",
+      "status": "pass",
+      "execution_time": "0:00:00.000622",
+      "timestamp": "2025-01-29T12:01:21.664656"
+    },
+    {
+      "test_name": "test_utils.TestPDFAnalyzer.test_prompt_template",
+      "status": "pass",
+      "execution_time": "0:00:00.000253",
+      "timestamp": "2025-01-29T12:01:21.664933"
+    },
+    {
+      "test_name": "test_utils.TestPDFAnalyzer.test_save_response",
+      "status": "pass",
+      "execution_time": "0:00:00.000542",
+      "timestamp": "2025-01-29T12:01:21.665499"
+    }
+  ]
+}

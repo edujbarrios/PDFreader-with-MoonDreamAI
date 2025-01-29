@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import validate_api_key, extract_first_page_as_image, analyze_image_with_moondream
+from utils import validate_api_key, extract_first_page_as_image, analyze_image_with_moondream, save_response_to_json
 
 def initialize_session_state():
     """Initialize session state variables."""
@@ -22,14 +22,28 @@ def format_analysis_result(result: str) -> str:
 
 def main():
     st.set_page_config(
-        page_title="PDFreader with MoonDream",
+        page_title="PDF Cover Page Analyzer",
         page_icon="📄",
-        layout="wide"
+        layout="wide",
+        initial_sidebar_state="collapsed"
     )
+
+    # Custom CSS for wider content
+    st.markdown("""
+        <style>
+        .block-container {
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            max-width: 95rem;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
     initialize_session_state()
 
-    st.title("📄 PDFreader with MoonDream")
+    st.title("📄 PDF Cover Page Analyzer")
     st.markdown("---")
 
     # API Key Input Section
@@ -81,6 +95,9 @@ def main():
 
                                 if success:
                                     st.session_state.analysis_result = result
+                                    # Save response to JSON file
+                                    save_response_to_json(uploaded_file.name, result)
+                                    st.success("Analysis saved to responses/responses.json")
                                 else:
                                     st.error(result)
                     else:
